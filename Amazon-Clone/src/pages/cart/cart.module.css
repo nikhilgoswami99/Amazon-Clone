@@ -1,0 +1,135 @@
+
+  .cart {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+  }
+  
+  .heading {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  /* Product Container */
+  .productContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    min-height: 35rem;
+    background-color: #fff;
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); /* 10px */
+    padding: 0rem 2rem;
+  }
+  
+  /* Product Item */
+  .cartItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .productImage {
+    width: 8rem; /* 160px */
+    height: 10rem;
+    margin-right: 2rem;
+  }
+  
+  .productDetails {
+    flex-grow: 1;
+  }
+  
+  .productTitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .productPrice,
+  .productOriginalPrice,
+  .productRating,
+  .productDelivery,
+  .productSales {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .strikethrough {
+    text-decoration: line-through;
+    color: red;
+  }
+  
+  /* Actions and Buttons */
+  .productActions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .quantityBtn {
+    background-color: #0bb922;
+    border: 0.0625rem solid #ccc; /* 1px */
+    padding: 0.3rem 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    min-width: 2rem;
+    color: white;
+    font-weight: bold;
+  }
+  
+  #quantity {
+    margin: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .deleteBtn {
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    margin-left: 2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  
+  .deleteBtn:hover {
+    background-color: #e5533c;
+  }
+  
+  /* Total Price Section */
+  .totalPrice {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .buyBtn {
+    width: 50%;
+    padding: 1rem 0.5rem;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  .buyBtn:hover {
+    background-color: #e68900;
+  }
+
+  
+  

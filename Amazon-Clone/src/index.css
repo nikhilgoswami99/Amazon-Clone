@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+button:active {
+  transform: translateY(3px);
+}
+
+#root {
+  min-height: 100vh;
+  min-width: auto;
+  background-color: rgb(233, 237, 238);
+}
