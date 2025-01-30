@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./login.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { auth, fireDB } from "../../firebase/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
+import myContext from "../../context/data/myContext";
 
 function Login() {
+
+  const context = useContext(myContext);
+
+  const {setUserDetails, userDetails} = context;
+ 
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -29,6 +36,9 @@ function Login() {
 
       if (userDoc.exists()) {
         console.log("User data from Firestore:", userDoc.data());
+        setUserDetails(userDoc.data())
+        localStorage.setItem("user", JSON.stringify(userDoc.data()))
+        
         toast.success("Login successful!");
         navigate("/"); // Redirect to dashboard or homepage
       } else {

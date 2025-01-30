@@ -1,7 +1,6 @@
 import './App.css'
 import Layout from './container/layout'
 import Home from './pages/home/home'
-import Order from './pages/order/order'
 import Cart from './pages/cart/cart'
 import Login from './pages/registration/login'
 import SignUp from './pages/registration/signUp'
@@ -26,12 +25,6 @@ function App() {
           path: '/',
           element: <Home></Home>
         },
-
-        {
-          path: '/order',
-          element: <Order></Order>
-        },
-
         {
           path: '/cart',
           element: <Cart></Cart>

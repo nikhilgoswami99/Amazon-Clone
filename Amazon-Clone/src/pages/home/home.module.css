@@ -11,3 +11,11 @@
     gap: 2rem;
     padding: 2rem;
 }
+
+.loaderText {
+    font-size: 2rem;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    height: 100%;
+}

@@ -9,30 +9,9 @@
     background-color: #f7f8fa; /* Amazon-like light background */
   }
   
-  .amazonLogo {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #ff9900; /* Amazon's iconic orange */
-    margin-bottom: 1rem;
-    font-family: Arial, sans-serif;
-    position: relative;
-  }
-  
-  .amazonLogo::after {
-    content: "";
-    position: absolute;
-    width: 2.5em;
-    height: 0.3em;
-    background: #146eb4; /* Amazon's blue for the smile arrow */
-    border-radius: 0.3em;
-    bottom: -0.6em;
-    left: 20%;
-    transform: rotate(20deg);
-  }
-  
   .spinner {
-    width: 3em;
-    height: 3em;
+    width: 5em;
+    height: 5em;
     border: 0.4em solid #e3e6e8;
     border-top: 0.4em solid #ff9900;
     border-radius: 50%;

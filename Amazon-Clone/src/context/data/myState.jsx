@@ -6,6 +6,8 @@ import axios from "axios";
 function MyState(props) {
   // for data transfer to all components
   let [data, setData] = useState([]);
+  let [loader, setLoader] = useState(false);
+  let [userDetails, setUserDetails] = useState([]);
 
   const [cartArr, setCartArr] = useState(() => {
     const savedCart = localStorage.getItem("cart");
@@ -34,8 +36,6 @@ function MyState(props) {
   }
 
 
-  
-
   // initial params values
   let [filters, setFilters] = useState({
     query: "All Departments",
@@ -60,21 +60,24 @@ function MyState(props) {
     };
 
     try {
+      setLoader(true);
       const response = await axios.request(options);
       setData(response.data.data.products);
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoader(false);
     }
   }
 
   // calling the data fetching funcion whenever filters change
   useEffect(() => {
-    AllProductsData();
+    // AllProductsData();
   }, [filters]);
 
   return (
     <>
-      <MyContext.Provider value={{ data, filters, setFilters, addToCart, cartArr, setCartArr }}>
+      <MyContext.Provider value={{ data, filters, setFilters, addToCart, cartArr, setCartArr, loader, userDetails, setUserDetails }}>
         {props.children}
       </MyContext.Provider>
     </>
