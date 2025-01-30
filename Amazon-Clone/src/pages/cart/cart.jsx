@@ -66,7 +66,7 @@ function CartPage() {
         </div>
       )}
 
-      <h1 className={styles.heading}>Your Amazon Cart</h1>
+      <h1 className={styles.heading}>Your AI Powered Cart</h1>
       <h1 className={styles.totalCartPrice}>
         Total Price :- <span style={{ color: "red" }}>{totalCartPrice}</span>
       </h1>

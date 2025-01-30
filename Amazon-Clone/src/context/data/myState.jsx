@@ -58,7 +58,7 @@ function MyState(props) {
       url: "https://real-time-amazon-data.p.rapidapi.com/search",
       params: filters,
       headers: {
-        "x-rapidapi-key": "41ef75cbcamsh58da2adee279124p18cba7jsn021699ab6e69",
+        "x-rapidapi-key": "b7d05f204amsh7df98a9dd610c75p1671f1jsn006f3eee3537",
         "x-rapidapi-host": "real-time-amazon-data.p.rapidapi.com",
       },
     };
@@ -76,7 +76,7 @@ function MyState(props) {
 
   // calling the data fetching funcion whenever filters change
   useEffect(() => {
-    // AllProductsData();
+    AllProductsData();
   }, [filters]);
 
   return (

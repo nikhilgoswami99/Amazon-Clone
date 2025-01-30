@@ -6,10 +6,10 @@ import styles from "./assistant.module.css";
 const AIAssistant = () => {
   const [input, setInput] = useState("");
   const [chat, setChat] = useState([]);
+  const [loading, setLoading] = useState(false); // State to track AI response loading
 
   const context = useContext(myContext);
-
-  const { cartArr, setCartArr } = context;
+  const { cartArr } = context;
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -17,11 +17,26 @@ const AIAssistant = () => {
     const userMessage = { type: "user", text: input };
     setChat([...chat, userMessage]);
     setInput("");
+    setLoading(true); // Start loading
 
-    const aiResponse = await getGeminiResponse(input);
-    const aiMessage = { type: "ai", text: aiResponse };
+    // Check if the input matches any product title in the cart
+    const product = cartArr.find((product) =>
+      product.product_title.toLowerCase().includes(input.toLowerCase())
+    );
 
-    setChat([...chat, userMessage, aiMessage]);
+    if (product) {
+      // If a match is found, ask AI for the product's description
+      const aiResponse = await getGeminiResponse(`Tell me about the product: ${product.product_title}`);
+      const aiMessage = { type: "ai", text: aiResponse };
+      setChat([...chat, userMessage, { type: "ai", text: "Wait... I am getting the information for you!" }, aiMessage]);
+    } else {
+      // If no match is found, respond with a "not found" message
+      const aiResponse = "Sorry, I couldn't find any product with that title in your cart. Please try again.";
+      const aiMessage = { type: "ai", text: aiResponse };
+      setChat([...chat, userMessage, aiMessage]);
+    }
+
+    setLoading(false); // Stop loading once the response is received
   };
 
   return (
@@ -36,6 +51,9 @@ const AIAssistant = () => {
             {message.text}
           </div>
         ))}
+        {loading && (
+          <div className={styles.message}>Wait... I am getting the information for you!</div>
+        )}
       </div>
       <div className={styles.inputBox}>
         <input

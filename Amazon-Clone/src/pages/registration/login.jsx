@@ -70,6 +70,7 @@ function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+            {"Email :- nikhil@gmail.com"}
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="password" className={styles.label}>Password</label>
@@ -80,6 +81,7 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            {"Password :- nikhil@1999"}
           </div>
           <button type="submit" className={styles.signInButton}>
             {loading ? "Signing in..." : "Continue"} {/* Show "Signing in..." when loading */}
