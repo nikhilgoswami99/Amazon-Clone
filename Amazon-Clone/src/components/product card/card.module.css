@@ -31,6 +31,8 @@
   color: #0f1111;
   margin: 0.75rem 0 0.5rem;
   text-align: center;
+  width: 100%;
+  text-wrap: wrap;
 }
 
 .productPrice {

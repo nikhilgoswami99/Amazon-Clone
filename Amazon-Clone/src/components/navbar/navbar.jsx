@@ -7,7 +7,7 @@ import { signOut } from "firebase/auth";
 
 function Navbar() {
   const context = useContext(myContext);
-  const { cartArr, setUserDetails, userDetails } = context;
+  const { cartArr, setUserDetails, userDetails, searchInput, setInput, input } = context;
   const navigate = useNavigate();
 
   // Load user from localStorage on refresh
@@ -53,11 +53,15 @@ function Navbar() {
       {/* Search Bar */}
       <div className={styles.searchBarContainer}>
         <input
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
           type="text"
+          id="text"
           className={styles.searchInput}
           placeholder="Search Amazon"
         />
-        <button className={styles.searchButton}>🔍</button>
+        <button onClick={searchInput} className={styles.searchButton}>🔍</button>
       </div>
 
       {/* User Info */}

@@ -6,7 +6,7 @@ import myContext from "../../context/data/myContext";
 function Filter(props) {
   // getting data from context api
   const context = useContext(myContext);
-  const { filters, setFilters, totalItems } = context;
+  const { searchInput } = context;
 
   return (
     <>
