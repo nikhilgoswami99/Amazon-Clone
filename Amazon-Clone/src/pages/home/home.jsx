@@ -14,6 +14,7 @@ function Home() {
   const context = useContext(myContext);
   const { data, loader, filters, setFilters } = context;
 
+
   // fetching data category wise
   function changeCategory(e) {
     let category = e.target.value;

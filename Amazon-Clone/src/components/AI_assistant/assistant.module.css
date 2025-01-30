@@ -1,0 +1,73 @@
+.amazonAiContainer {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    height: 300px;
+    width: 500px;
+    border: 2px solid orange;
+    background: #232f3e;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
+  }
+  
+  .assistantHeader {
+    font-size: 1.125rem;
+    color: #ff9900;
+    text-align: center;
+    margin-bottom: 0.625rem;
+  }
+  
+  .chatBox {
+    height: 15.625rem;
+    overflow-y: auto;
+    background: #37475a;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+  }
+  
+  .message {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.375rem;
+    border-radius: 0.3125rem;
+    max-width: 80%;
+  }
+  
+  .user {
+    background: #ff9900;
+    color: #232f3e;
+    align-self: flex-end;
+  }
+  
+  .ai {
+    background: #ffffff;
+    color: #232f3e;
+    align-self: flex-start;
+  }
+  
+  .inputBox {
+    display: flex;
+    margin-top: 0.625rem;
+  }
+  
+  .inputBox input {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.3125rem;
+    font-size: 0.875rem;
+  }
+  
+  .inputBox button {
+    background: #ff9900;
+    border: none;
+    color: #232f3e;
+    padding: 0.5rem 0.75rem;
+    margin-left: 0.3125rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0.3125rem;
+  }
+  

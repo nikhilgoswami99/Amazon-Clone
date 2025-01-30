@@ -1,10 +1,13 @@
 # Amazon Clone - E-Commerce Platform
 
 ## Hosted Link
-Live Demo - (https://amazon-clone-nikhil-goswamis-projects.vercel.app/)
+Live Demo - [Amazon Clone](https://amazon-clone-nikhil-goswamis-projects.vercel.app/)
 
 ## Overview
 This project is a fully functional Amazon Clone built using React (Vite), Firebase for authentication, and the Amazon Product Data API for product listings. Users can browse products, filter them based on various criteria, add items to their cart, and get a bill summary. The platform is responsive and optimized for a seamless user experience.
+
+### New Feature: **Gemini AI Cart Assistant**
+A **Gemini AI Cart Assistant** has been added to help users with their shopping experience. The assistant offers product recommendations, answers queries, and assists with checkout information, making the shopping experience more interactive and intuitive.
 
 ## Features
 - **Authentication using Firebase** (Login, Sign-up, and Logout functionality)
@@ -13,13 +16,15 @@ This project is a fully functional Amazon Clone built using React (Vite), Fireba
 - **Product Carousel** (Display featured products dynamically)
 - **Filters** (Sort by price, rating, category, and more)
 - **Add to Cart Feature** (With bill summary calculation)
-- **Product Description in Audio Format** (Additional accessibility feature)
+- **Product Description using AI** (Additional accessibility feature)
+- **Gemini AI Cart Assistant** (Interactive AI for personalized recommendations, FAQs, and checkout assistance)
 
 ## Tech Stack
 - **Frontend**: React (Vite), CSS (or Tailwind CSS/Styled Components)
 - **Backend**: Firebase (for Authentication & Firestore for data storage)
 - **API Integration**: Amazon Product Data API
 - **State Management**: React Context API / Redux
+- **AI Integration**: Gemini AI (for cart recommendations and shopping assistant)
 
 ## Installation & Setup
 
@@ -27,7 +32,7 @@ This project is a fully functional Amazon Clone built using React (Vite), Fireba
 ```sh
 git clone https://github.com/yourusername/amazon-clone.git
 cd amazon-clone
-```
+
 
 ### 2. Install Dependencies
 ```sh

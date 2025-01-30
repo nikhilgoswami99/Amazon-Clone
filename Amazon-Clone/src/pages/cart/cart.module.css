@@ -8,6 +8,42 @@
     width: 100%;
     padding: 2rem;
   }
+
+  .aiButton {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #ff9900;
+    color: white;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .aiButton:hover {
+    background-color: #e68900;
+  }
+  
+  .assistant {
+    position: fixed;
+    bottom: 8rem;
+    right: 2rem;
+    background-color: #232f3e;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    min-height: 60%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+  }
+  
   
   .heading {
     text-align: center;
