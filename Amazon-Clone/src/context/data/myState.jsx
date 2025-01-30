@@ -7,7 +7,7 @@ function MyState(props) {
   // for data transfer to all components
   let [data, setData] = useState([]);
   let [loader, setLoader] = useState(false);
-  let [userDetails, setUserDetails] = useState([]);
+  let [userDetails, setUserDetails] = useState(null);
 
   const [cartArr, setCartArr] = useState(() => {
     const savedCart = localStorage.getItem("cart");

@@ -75,13 +75,13 @@
 }
 
 .signOutButton {
-  background-color: #febd69;
-  border: none;
+  background-color: #232f3e;
+  border: 1px solid #febd69;
   padding: 0.5rem;
   border-radius: 0.25rem;
   font-size: 1.2rem;
   cursor: pointer;
-  color: rgb(177, 40, 40);
+  color: white;
 }
 
 .signUpButton {
@@ -124,13 +124,43 @@
 .cartContainer {
   margin-left: 2%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cartIcon {
   font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .cartCount {
   font-size: 1.5rem;
   font-weight: bold;
+  margin-right: 1rem;
+}
+
+.cartText {
+  font-size: 1rem;
+}
+
+.signUpButton:hover {
+  color: rgb(253, 190, 104);
+}
+
+.signOutButton:hover {
+  color: rgb(253, 190, 104);
+}
+
+.userText:hover {
+  color: rgb(253, 190, 104);
+  cursor: pointer;
+}
+
+.navbar span:hover {
+  color: rgb(253, 190, 104);
+  cursor: pointer;
 }

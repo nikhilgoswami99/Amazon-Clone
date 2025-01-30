@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styles from "./navbar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import myContext from "../../context/data/myContext";
@@ -10,12 +10,20 @@ function Navbar() {
   const { cartArr, setUserDetails, userDetails } = context;
   const navigate = useNavigate();
 
+  // Load user from localStorage on refresh
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUserDetails(JSON.parse(storedUser));
+    }
+  }, [setUserDetails]);
+
   const handleLogout = async () => {
     try {
       await signOut(auth);
       localStorage.removeItem("user");
       setUserDetails(null);
-      navigate("/login");
+      // navigate("/login"); 
     } catch (error) {
       console.error("Logout failed:", error);
     }
@@ -25,7 +33,7 @@ function Navbar() {
     <nav className={styles.navbar}>
       {/* Logo */}
       <div className={styles.logoContainer}>
-        <Link to={"/"}>
+        <Link to="/">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
             alt="Amazon Logo"
@@ -54,9 +62,7 @@ function Navbar() {
       <div className={styles.userContainer}>
         {userDetails ? (
           <>
-            <span className={styles.userText}>
-              Hello, {userDetails.email || "User"}
-            </span>
+            <span className={styles.userText}>Hello, {userDetails.email}</span>
             <button className={styles.signOutButton} onClick={handleLogout}>
               Sign Out
             </button>
@@ -76,9 +82,9 @@ function Navbar() {
       {/* Cart */}
       <div className={styles.cartContainer}>
         <Link to="/cart" className={styles.navLink}>
-          <span className={styles.cartIcon}>🛒</span>
-          <span className={styles.cartCount}>{cartArr.length}</span>
+          <span className={styles.cartIcon}>🛒 <span className={styles.cartText}>Cart</span></span>
         </Link>
+        <span className={styles.cartCount}>{cartArr.length}</span>
       </div>
     </nav>
   );
