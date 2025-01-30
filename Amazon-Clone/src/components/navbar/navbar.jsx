@@ -33,13 +33,15 @@ function Navbar() {
     <nav className={styles.navbar}>
       {/* Logo */}
       <div className={styles.logoContainer}>
-        <Link to="/">
+        <Link className={styles.navLink} to="/">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
             alt="Amazon Logo"
             className={styles.logo}
           />
+          
         </Link>
+        {/* <span className={styles.home}>Home</span> */}
       </div>
 
       {/* Location */}

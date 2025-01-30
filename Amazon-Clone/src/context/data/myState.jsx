@@ -47,6 +47,8 @@ function MyState(props) {
     deals_and_discounts: "NONE",
   });
 
+
+  //b7d05f204amsh7df98a9dd610c75p1671f1jsn006f3eee3537, 41ef75cbcamsh58da2adee279124p18cba7jsn021699ab6e69
   // data fetching logic
   async function AllProductsData() {
     const options = {

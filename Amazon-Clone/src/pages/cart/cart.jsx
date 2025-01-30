@@ -8,6 +8,23 @@ function CartPage() {
 
   const { cartArr, setCartArr} = context;
 
+
+  const totalCartPrice = cartArr.reduce((total, product) => {
+    const productPrice = parseFloat(product.product_price.replace('$', ''));
+    const productTotalPrice = productPrice * product.quantity;
+    return total + productTotalPrice;
+  }, 0).toFixed(2);
+
+  console.log(totalCartPrice);
+  
+
+
+
+
+
+
+
+
   // deleting a particular Item
   function deleteProduct(props)
   {
@@ -53,6 +70,7 @@ function CartPage() {
   return (
     <>
       <h1 className={styles.heading}>Your Amazon Cart</h1>
+      <h1 className={styles.totalCartPrice}>Total Price :- <span style={{color: "red"}}>{totalCartPrice}</span></h1>
       <div className={styles.cart}>
         {cartArr.map((obj, idx) => {
           return <Cart key={idx} {...obj} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} deleteProduct={deleteProduct}></Cart>;
@@ -64,9 +82,11 @@ function CartPage() {
 
 // created cart component separately
 function Cart(props) {
+  // Convert product_price to a number by removing the dollar sign and parsing it as a float
+  const price = parseFloat(props.product_price.replace('$', ''));
 
-  
-
+  // Calculate total price based on quantity
+  const totalPrice = (price * props.quantity).toFixed(2); // Limit to 2 decimal places
 
   return (
     <>
@@ -103,7 +123,7 @@ function Cart(props) {
             </div>
             <div className={styles.totalPrice}>
               <p>
-                Total: $<span id="total-price">{props.product_price * props.quantity}</span>
+                Total: ${totalPrice} {/* Dynamic total price */}
               </p>
             </div>
             <button className={styles.buyBtn}>Buy Now</button>

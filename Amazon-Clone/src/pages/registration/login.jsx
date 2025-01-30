@@ -8,14 +8,12 @@ import { doc, getDoc } from "firebase/firestore";
 import myContext from "../../context/data/myContext";
 
 function Login() {
-
   const context = useContext(myContext);
-
-  const {setUserDetails, userDetails} = context;
- 
+  const { setUserDetails, userDetails } = context;
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false); // Loading state
   const navigate = useNavigate();
 
   const signIn = async (e) => {
@@ -24,21 +22,21 @@ function Login() {
       return toast.error("Please enter both email and password.");
     }
 
+    setLoading(true); // Start loading state
+
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-      
 
       // Retrieve user data from Firestore
       const userDocRef = doc(fireDB, "users", user.uid);
       const userDoc = await getDoc(userDocRef);
-      
 
       if (userDoc.exists()) {
         console.log("User data from Firestore:", userDoc.data());
-        setUserDetails(userDoc.data())
-        localStorage.setItem("user", JSON.stringify(userDoc.data()))
-        
+        setUserDetails(userDoc.data());
+        localStorage.setItem("user", JSON.stringify(userDoc.data()));
+
         toast.success("Login successful!");
         navigate("/"); // Redirect to dashboard or homepage
       } else {
@@ -46,6 +44,8 @@ function Login() {
       }
     } catch (error) {
       toast.error("Error signing in: " + error.message);
+    } finally {
+      setLoading(false); // Stop loading state
     }
   };
 
@@ -81,14 +81,16 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit" className={styles.signInButton}>Continue</button>
+          <button type="submit" className={styles.signInButton}>
+            {loading ? "Signing in..." : "Continue"} {/* Show "Signing in..." when loading */}
+          </button>
         </form>
         <p className={styles.privacyNotice}>
           By continuing, you agree to Amazon's <a href="/" className={styles.link}>Conditions of Use</a> and <a href="/" className={styles.link}>Privacy Notice</a>.
         </p>
         <div className={styles.divider}></div>
         <div className={styles.createAccountDiv}>
-          Create your Amazon account -
+          Create your Amazon account - 
           <Link className={styles.linkToSignup} to="/sign-up"> Sign Up</Link>
         </div>
       </div>

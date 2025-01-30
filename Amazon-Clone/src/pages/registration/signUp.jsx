@@ -101,9 +101,9 @@ function SignUp() {
           <a href="/" className={styles.link}>Privacy Notice</a>.
         </p>
         <div className={styles.divider}></div>
-        <button className={styles.googleSignUpButton}>
+        {/* <button className={styles.googleSignUpButton}>
           Sign up with Google
-        </button>
+        </button> */}
         <p className={styles.haveAccount}>
           Already have an account?{" "}
           <Link to="/login" className={styles.link}>Sign in</Link>

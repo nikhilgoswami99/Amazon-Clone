@@ -65,9 +65,9 @@ function Home() {
         ></Filter>
         {loader ? (
           <Loader />
-        ) : data && !data.length > 0 ? (
+        ) : data && data.length > 0 ? (
           <div className={styles.cardContainer}>
-            {products.map((obj) => (
+            {data.map((obj) => (
               <Card key={obj.asin} {...obj} />
             ))}
           </div>

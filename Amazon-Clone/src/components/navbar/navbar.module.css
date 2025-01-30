@@ -13,6 +13,7 @@
 /* cart.module.css */
 .logoContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
@@ -22,7 +23,12 @@
   width: 10rem; /* Adjust as needed */
   max-width: 70%;
   height: auto;
-  filter: invert(1) brightness(2);
+  filter: invert(1) brightness(1);
+}
+
+.home {
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 .locationContainer {
@@ -76,7 +82,7 @@
 
 .signOutButton {
   background-color: #232f3e;
-  border: 1px solid #febd69;
+  border: 2px solid #febd69;
   padding: 0.5rem;
   border-radius: 0.25rem;
   font-size: 1.2rem;
@@ -87,7 +93,7 @@
 .signUpButton {
   margin-left: 0.5rem;
   background-color: #232f3e;
-  border: 1px solid #febd69;
+  border: 2px solid #febd69;
   padding: 0.5rem;
   color: white;
   font-size: 1.2rem;
@@ -108,7 +114,7 @@
 
 .userText {
   background-color: #232f3e;
-  border: 1px solid #febd69;
+  border: 2px solid #febd69;
   padding: 0.5rem ;
   color: white;
   font-size: 1.2rem;
