@@ -58,7 +58,7 @@ const AIAssistant = () => {
       <div className={styles.inputBox}>
         <input
           type="text"
-          placeholder="Ask about your cart..."
+          placeholder="Type any cart-product's title here..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
