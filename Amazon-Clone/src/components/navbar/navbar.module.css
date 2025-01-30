@@ -170,3 +170,33 @@
   color: rgb(253, 190, 104);
   cursor: pointer;
 }
+
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .locationContainer {
+    display: none;
+  }
+
+  .searchBarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+  }
+
+  .userContainer {
+    flex-direction: column;
+    display: none;
+  }
+
+  .logoContainer {
+    text-align: center;
+  }
+}

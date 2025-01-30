@@ -37,4 +37,22 @@
     color: white;
     cursor: pointer;
   }
+
+  @media (max-width: 800px) {
+    .filterBarContainer{
+      flex-wrap: wrap;
+      position: static;
+    }
+
+    .dropdownContainer{
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filterOptionsContainer {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+  }
   
