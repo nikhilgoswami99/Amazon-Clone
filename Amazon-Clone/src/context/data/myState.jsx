@@ -42,7 +42,7 @@ function MyState(props) {
   let [filters, setFilters] = useState({
     query: "All Departments",
     page: "1",
-    country: "IN",
+    country: "US",
     sort_by: "RELEVANCE",
     product_condition: "ALL",
     is_prime: "false",

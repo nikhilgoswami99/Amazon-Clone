@@ -43,14 +43,14 @@ function Filter(props) {
               id="country"
               className={styles.dropdown}
             >
-              <option value="US">IN</option>
+              <option value="US">US</option>
               <option value="AU">AU</option>
               <option value="BR">BR</option>
               <option value="CA">CA</option>
               <option value="CN">CN</option>
               <option value="FR">FR</option>
               <option value="DE">DE</option>
-              <option value="IN">US</option>
+              <option value="IN">IN</option>
               <option value="IT">IT</option>
               <option value="MX">MX</option>
               <option value="NL">NL</option>
